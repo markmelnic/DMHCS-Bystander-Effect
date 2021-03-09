@@ -58,3 +58,20 @@ function result = ddr2b(trace, params, t)
         end
     end
 end
+
+%DDR3 Decision to intervene
+function result = ddr3(trace, params, t)
+    result = {};
+    for interpretation_of_situation = l2.getall(trace, t, 'interpretation_of_situation', {NaN})
+        interpretation = interpretation_of_situation.arg{1};
+        for degree_of_responsibility = l2.getall(trace, t, 'degree_of_responsibility', {NaN})
+            responsibility = degree_of_responsibility.arg{1};
+            if interpretation == "emergency" && responsibility > 50
+                action = 'intervene';
+            else
+                action = 'none'
+            end
+            result = {result{:} {t+1, 'form_of_assistance', {action}}};
+        end
+    end
+end
