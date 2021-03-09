@@ -17,8 +17,44 @@ function result = ddr1(trace, params, t)
                 responsibility_value = ability / bystanders;
                 result = {result{:} {t+1, 'degree_of_responsibility', {responsibility_value}}};
             end
-        end 
+        end
     end
 end
 
-%DDR2 Interpretation of robbery 
+%DDR2a Interpretation of robbery
+function result = ddr2a(trace, params, t)
+    result = {};
+    for number_of_bystanders = l2.getall(trace, t, 'number_of_bystanders', {NaN})
+        bystanders = number_of_bystanders.arg{1};
+        for observing_a_situation = l2.getall(trace, t, 'observing_a_situation', {NaN})
+            situation = observing_a_situation.arg{1};
+            if situation == "robbery"
+                if bystanders < 3
+                    interpretation = 'emergency';
+                else
+                    interpretation = 'normal';
+                end
+                result = {result{:} {t+1, 'interpretation_of_situation', {interpretation}}};
+            end
+        end
+    end
+end
+
+%DDR2b Interpretation of accident
+function result = ddr2b(trace, params, t)
+    result = {};
+    for number_of_bystanders = l2.getall(trace, t, 'number_of_bystanders', {NaN})
+        bystanders = number_of_bystanders.arg{1};
+        for observing_a_situation = l2.getall(trace, t, 'observing_a_situation', {NaN})
+            situation = observing_a_situation.arg{1};
+            if situation == "accident"
+                if bystanders < 5
+                    interpretation = 'emergency';
+                else
+                    interpretation = 'normal';
+                end
+                result = {result{:} {t+1, 'interpretation_of_situation', {interpretation}}};
+            end
+        end
+    end
+end
