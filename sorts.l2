@@ -1,0 +1,4 @@
+SITUATION;          {accident, robbery}
+INTERPRETATION;     {emergency, normal}               
+ACTION;             {intervene, none}
+AGENT;              {arnie}
