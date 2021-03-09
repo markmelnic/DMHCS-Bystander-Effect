@@ -1,0 +1,9 @@
+ability_to_help;                 {REAL}
+number_of_bystanders;            {REAL}
+observing_a_situation;           {SITUATION}
+degree_of_responsibility;        {REAL}
+interpretation_of_situation;     {INTERPRETATION}
+form_of_assistance;              {ACTION}
+desire;                          {AGENT, BOOLEAN}
+belief;                          {AGENT, BOOLEAN}
+alert_messgae;                   {BOOLEAN}
