@@ -1,4 +1,5 @@
 SITUATION;          {accident, robbery}
 INTERPRETATION;     {emergency, normal}               
 ACTION;             {intervene, none}
-AGENT;              {arnie}
+INDICATOR;          {<interpretation_of_situation>, <form_of_assistance>, <send_message>}
+MESSAGE;            {send message, do not send message}

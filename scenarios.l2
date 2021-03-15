@@ -1,2 +1,4 @@
-ability_to_help{10};                    [1:Inf]
+ability_to_help{400};                   [1:Inf]
 number_of_bystanders{4};                [1:Inf]
+observing_a_situation{robbery};         [1:10]
+observing_a_situation{accident};        [11:25]

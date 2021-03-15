@@ -4,6 +4,7 @@ observing_a_situation;           {SITUATION}
 degree_of_responsibility;        {REAL}
 interpretation_of_situation;     {INTERPRETATION}
 form_of_assistance;              {ACTION}
-desire;                          {AGENT, BOOLEAN}
-belief;                          {AGENT, BOOLEAN}
-alert_messgae;                   {BOOLEAN}
+send_message;                    {BOOLEAN}
+desire;                          {INDICATOR}
+belief;                          {INDICATOR}
+propose;                         {MESSAGE}
